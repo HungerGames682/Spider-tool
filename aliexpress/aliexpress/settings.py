@@ -11,8 +11,8 @@ BOT_NAME = 'aliexpress'
 
 SPIDER_MODULES = ['aliexpress.spiders']
 NEWSPIDER_MODULE = 'aliexpress.spiders'
-
-
+FEED_FORMAT = "csv"
+FEED_URI = "reddit.csv"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'aliexpress (+http://www.yourdomain.com)'
 
