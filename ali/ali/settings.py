@@ -1,4 +1,4 @@
-# Scrapy settings for ourfirst project
+# Scrapy settings for ali project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,16 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'ourfirst'
+BOT_NAME = 'ali'
 
-SPIDER_MODULES = ['ourfirst.spiders']
-NEWSPIDER_MODULE = 'ourfirst.spiders'
-#Export as CSV Feed
-FEED_FORMAT = "csv"
-FEED_URI = "test.csv"
+SPIDER_MODULES = ['ali.spiders']
+NEWSPIDER_MODULE = 'ali.spiders'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'ourfirst (+http://www.yourdomain.com)'
+#USER_AGENT = 'ali (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'ourfirst.middlewares.OurfirstSpiderMiddleware': 543,
+#    'ali.middlewares.AliSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'ourfirst.middlewares.OurfirstDownloaderMiddleware': 543,
+#    'ali.middlewares.AliDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'ourfirst.pipelines.OurfirstPipeline': 300,
+#    'ali.pipelines.AliPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
