@@ -1,11 +1,18 @@
 import scrapy
-
+import turtle
+m = turtle.Turtle()
 lists = []
 produ = []
 been_to = []
-
+# Wipes the prevoise data
 with open('results.txt', 'w') as j:
     j.writelines("")
+
+with open('been_to.txt', 'w') as g:
+    g.writelines("")
+
+with open('full_results.txt', 'w') as ki:
+    ki.writelines("")
 
 j.close()
 class LinktreespiderSpider(scrapy.Spider):
@@ -26,21 +33,22 @@ class LinktreespiderSpider(scrapy.Spider):
         # Gets the href= value for the next page
         further_page_url = response.xpath('//*[@class="next"]/a/@href').extract_first()
     
+        
         produ.append(further_page_url)
 
         # Combines the next url with the origanl to getto the next page
         complete_url = response.urljoin(further_page_url)
 
         lists.append(complete_url)
-        been_to.append(complete_url)
+        
 
-        for d in range(0, len(lists)):
-            if lists[d] == complete_url:
-                been_to.append("Failure")
-                yield scrapy.Request(complete_url)
+       
+                
+                
+        yield scrapy.Request(complete_url)
+                
+                
 
-            else:
-                yield scrapy.Request(complete_url)
 
         # Writes everything to a file
         for i in range(len(lists)):
@@ -48,4 +56,37 @@ class LinktreespiderSpider(scrapy.Spider):
                 f.writelines(lists[i] + '\n')
                 print(lists)
                 print(produ)
+
+        for f in range(len(been_to)):
+            with open('been_to.txt', 'a') as dk:
+                dk.writelines(been_to[f] + '\n')
+
+        for k in range(len(produ)):
+            with open('uncut.txt','a') as jj:
+                jj.writelines(produ[k] + '\n')
+
+
+       
+
+       
+        
+
+
+        # Sorts the data out or something
+        # with open('results.txt', 'r') as ff:
+        #     bob = ff.readlines()
+
+        #     for a in range(len(bob)):
+        #         b = a + 1
+        #         if bob[a] == bob[b]:
+        #             with open('full_results.txt','a') as dd:
+        #                dd.writelines(bob[a] + '\n')
+
+        #         elif bob[a] != bob[b]:
+        #          print("AHGHHHFHJDSAKL;FHADJSKL")
+
+        
+
+
+
                 
