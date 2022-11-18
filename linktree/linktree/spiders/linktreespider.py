@@ -1,6 +1,5 @@
 import scrapy
-import turtle
-m = turtle.Turtle()
+
 lists = []
 produ = []
 been_to = []

@@ -13,6 +13,7 @@ with open('results.txt', 'r') as f:
 
 with open('uncut.txt', 'r') as s:
     bob1 = s.readlines()
-    
-    print(bob1)
+    for i in range(len(bob1)):
+        print(len(bob1))
+        print(bob1)
     # for i in range(len(bob1)):
